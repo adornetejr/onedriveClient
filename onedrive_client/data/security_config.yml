@@ -1,7 +1,7 @@
 GRAPH_API:
   CLIENT_ID: '0e170d2c-0ac5-4a4f-9099-c6bb0fb52d0c'
   CLIENT_SECRET: 'xdGsBCTOiCHxBWJcKyK2WpA'
-  REDIRECT: 'https://onedrivesite.mario-apra.tk/'
+  REDIRECT: 'https://login.microsoftonline.com/common/oauth2/nativeclient'
 
 PERSONAL:
   CLIENT_ID: '000000004010C916'
