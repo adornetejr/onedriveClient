@@ -6,23 +6,11 @@ from pwd import getpwnam
 
 import click
 
+import getpass
 
 from onedrive_client import mkdir, get_resource, od_webhooks
 from onedrive_client.od_models import account_profile
 from onedrive_client.od_models import drive_config as _drive_config
-
-
-def is_invalid_username(s):
-    return s is None or not isinstance(s, str) or len(s.strip()) == 0
-
-
-def get_login_username():
-    # If allow for sudo, prepend SUDO_USER.
-    for key in ('LOGNAME', 'USER', 'LNAME', 'USERNAME'):
-        s = os.getenv(key)
-        if not is_invalid_username(s):
-            return s
-    raise ValueError('Cannot find login name of current user.')
 
 
 def load_context(loop=None):
@@ -68,7 +56,7 @@ class UserContext:
         """
         # Information about host and user.
         self.host_name = os.uname()[1]
-        self.user_name = get_login_username()
+        self.user_name = getpass.getuser()
         self.user_uid = getpwnam(self.user_name).pw_uid
         self.user_home = os.path.expanduser('~' + self.user_name)
         self.config_dir = click.get_app_dir('onedrive_client')
