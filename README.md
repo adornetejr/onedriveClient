@@ -142,38 +142,10 @@ Notes:
 to all users in the OS), remove argument `--user` from the command).
 
 ```bash
-$ pip3 install --user git+https://github.com/derrix060/onedriveClient.git
-```
-
-#### Install from source manually
-
-First pull the code from GitHub repository:
-
-```bash
 $ git clone https://github.com/derrix060/onedriveClient.git
-$ cd onedrive_client
-
-```
-
-You may want to run the included tests before installing with one of the
-following commands:
-
-```bash
-# Use the built-in test driver of Python.
-$ python3 ./setup.py test
-
-# Or use py.test if you have it installed.
-$ python3 -m pytest
-```
-
-Then install `onedrive_client` with one of the following command:
-
-```bash
-# Use pip to install onedrive_client.
-$ pip3 install -e .
-
-# Or use the built-in setuptools package from Python.
-$ python3 ./setup.py install --user
+$ cd onedriveClient
+$ pip3 install .
+$ pip3 install graph-sdk-python/
 ```
 
 ## Usage
