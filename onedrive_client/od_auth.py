@@ -117,7 +117,7 @@ class GraphAuthenticator:
         data = response.json()
         if response.status_code != requests.codes.ok:
             raise ValueError(
-                f"Failed to read user profile:{data['error']['message']}")
+                "Failed to read user profile:{data['error']['message']}")
 
         # Authentication information.
         data['access_token'] = self.auth_provider._session.access_token
