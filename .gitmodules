@@ -1,3 +1,4 @@
 [submodule "graph-sdk-python"]
     path = graph-sdk-python
     url = https://github.com/derrix060/graph-sdk-python.git
+    branch = feature/2-support-graph-only
